@@ -19,7 +19,7 @@ jobs:
           echo "env ORG_SECRET: ${{ env.ORG_SECRET }}"
 
       - name: call common.yml
-        uses: konamugi-organization/wf-test-common/.github/workflow/common.yml@main
+        uses: konamugi-organization/wf-test-common/.github/workflows/common.yml@main
         with:
           dev_secret: ${{ env.DEV_SECRET }}
           common_secret: ${{ env.ORG_SECRET }}
