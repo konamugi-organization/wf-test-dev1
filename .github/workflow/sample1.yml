@@ -1,0 +1,26 @@
+name: Echo Secrets
+
+on:
+  workflow_dispatch:
+    # secrets:
+    #   DEV_SECRET: ${{ secrets.DEV_SECRET }}
+    #   ORG_SECRET: ${{ secrets.ORG_SECRET }}
+
+jobs:
+  echo-secrets:
+    runs-on: ubuntu-latest
+    secrets:
+      DEV_SECRET: ${{ secrets.DEV_SECRET }}
+      ORG_SECRET: ${{ secrets.ORG_SECRET }}
+
+    steps:
+      - name: Echo Secret
+        run: |
+        echo "DEV_SECRET: ${{ secrets.DEV_SECRET }}"
+        echo "ORG_SECRET: ${{ secrets.ORG_SECRET }}"
+
+      -name: call common.yml
+        uses: konamugi-organization/wf-test-common/.github/workflow/common.yml
+        secrets:
+          DEV_SECRET:: ${{ secrets.DEV_SECRET }}
+          COMMON_SECRET: ${{ secrets.ORG_SECRET }}
