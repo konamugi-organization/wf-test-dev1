@@ -2,9 +2,6 @@ name: Echo Secrets
 
 on:
   workflow_dispatch:
-    # secrets:
-    #   DEV_SECRET: ${{ secrets.DEV_SECRET }}
-    #   ORG_SECRET: ${{ secrets.ORG_SECRET }}
 
 jobs:
   echo-secrets:
@@ -15,9 +12,9 @@ jobs:
           echo "DEV_SECRET: ${{ secrets.DEV_SECRET }}"
           echo "ORG_SECRET: ${{ secrets.ORG_SECRET }}"
 
-      - name: call common.yml
-        uses: konamugi-organization/wf-test-common/.github/workflow/common.yml@main
-        with:
-          secrets:
-            DEV_SECRET: ${{ secrets.DEV_SECRET }}
-            COMMON_SECRET: ${{ secrets.ORG_SECRET }}
+      # - name: call common.yml
+      #   uses: konamugi-organization/wf-test-common/.github/workflow/common.yml@main
+      #   with:
+      #     secrets:
+      #       dev_secret: ${{ secrets.DEV_SECRET }}
+      #       common_secret: ${{ secrets.ORG_SECRET }}
