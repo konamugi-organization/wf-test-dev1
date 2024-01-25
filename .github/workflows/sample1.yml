@@ -17,6 +17,7 @@ jobs:
 
       - name: call common.yml
         uses: konamugi-organization/wf-test-common/.github/workflow/common.yml@main
-        secrets:
-          DEV_SECRET:: ${{ secrets.DEV_SECRET }}
-          COMMON_SECRET: ${{ secrets.ORG_SECRET }}
+        with:
+          secrets:
+            DEV_SECRET: ${{ secrets.DEV_SECRET }}
+            COMMON_SECRET: ${{ secrets.ORG_SECRET }}
