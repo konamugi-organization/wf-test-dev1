@@ -9,10 +9,6 @@ on:
 jobs:
   echo-secrets:
     runs-on: ubuntu-latest
-    secrets:
-      DEV_SECRET: ${{ secrets.DEV_SECRET }}
-      ORG_SECRET: ${{ secrets.ORG_SECRET }}
-
     steps:
       - name: Echo Secret
         run: |
