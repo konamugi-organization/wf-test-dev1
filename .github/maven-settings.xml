@@ -27,10 +27,10 @@
   </profiles>
 
   <servers>
-    <!-- <server>
+    <server>
       <id>github</id>
-      <username>USERNAME</username>
-      <password>TOKEN</password>
-    </server> -->
+      <username>konamugi</username>
+      <password>${env.GITHUB_TOKEN}</password>
+    </server>
   </servers>
 </settings>
